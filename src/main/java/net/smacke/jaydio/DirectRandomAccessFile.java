@@ -257,8 +257,8 @@ public class DirectRandomAccessFile implements DataInput, DataOutput, Closeable 
 	 * 
 	 * @throws IOException
 	 */
-	public void read(byte[] dst, int offset, int length) throws IOException {
-		channel.readBytes(dst, offset, length);
+	public int read(byte[] dst, int offset, int length) throws IOException {
+		return channel.readBytes(dst, offset, length);
 	}
 
 	/**
@@ -268,8 +268,8 @@ public class DirectRandomAccessFile implements DataInput, DataOutput, Closeable 
 	 * 
 	 * @throws IOException
 	 */
-	public void read(byte[] dst) throws IOException {
-		channel.readBytes(dst, 0, dst.length);
+	public int read(byte[] dst) throws IOException {
+		return channel.readBytes(dst, 0, dst.length);
 	}
 
 	@Override
