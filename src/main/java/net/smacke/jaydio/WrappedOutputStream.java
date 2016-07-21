@@ -24,4 +24,9 @@ public class WrappedOutputStream extends OutputStream {
   public void write(byte[] b, int off, int len) throws IOException {
     this.file.write(b, off, len);
   }
+  
+  @Override
+  public void close() throws IOException {
+    this.file.close();
+  }
 }

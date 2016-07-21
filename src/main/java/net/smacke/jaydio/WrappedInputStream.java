@@ -21,4 +21,8 @@ public class WrappedInputStream extends InputStream{
   public int read(byte[] dst, int offset, int length) throws IOException {
     return this.file.read(dst, offset, length);
   }
+
+  public void close() throws IOException {
+    this.file.close();
+  }
 }
